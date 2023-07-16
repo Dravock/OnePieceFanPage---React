@@ -5,28 +5,22 @@ import Dashboard from './rp-admin-dashboard.js'
 import Pages from './rp-admin-pages.js'
 import Preferences from './rp-admin-preferences.js'
 import Plugins from './rp-admin-plugins.js'
+import Design from './rp-admin-design.js'
+
 
 
 function RPADMIN() {
 
-
-/*     { url === "/rp-admin/" ? null : <Dashboard /> }
-    { url === "/rp-admin/media" ?  null  : <Media /> }
-    { url === "/rp-admin/pages" ? null : <Pages /> }
-    { url === "/rp-admin/preference" ? null : <Preferences /> }
-    { url === "/rp-admin/plugins" ? null : <Plugins /> } */
-
     const url = window.location.pathname
-    const content_activ = true
     const [renderPage,setRenderPage] = useState({
         dashboard:true,
         pages: false,
         media:false,
         plugins:false,
-        pref:false
+        pref:false,
+        design:false
     })
-    console.log(url)
-    
+
     useEffect(() => {
         switch (url) {
             case "/rp-admin/":
@@ -35,7 +29,8 @@ function RPADMIN() {
                     pages: false,
                     media:false,
                     plugins:false,
-                    pref:false
+                    pref:false,
+                    design:false
                 })
                 break;
             case "/rp-admin/pages":
@@ -44,7 +39,8 @@ function RPADMIN() {
                     pages: true,
                     media:false,
                     plugins:false,
-                    pref:false
+                    pref:false,
+                    design:false
                 })
                 break;
             case "/rp-admin/media":
@@ -53,7 +49,8 @@ function RPADMIN() {
                     pages: false,
                     media:true,
                     plugins:false,
-                    pref:false
+                    pref:false,
+                    design:false
                 })
                 break;
             case "/rp-admin/plugins":
@@ -62,7 +59,8 @@ function RPADMIN() {
                     pages: false,
                     media:false,
                     plugins:true,
-                    pref:false
+                    pref:false,
+                    design:false
                 })
                 break;
             case "/rp-admin/preference":
@@ -71,25 +69,36 @@ function RPADMIN() {
                     pages: false,
                     media:false,
                     plugins:false,
-                    pref:true
+                    pref:true,
+                    design:false
+                })
+                break;
+            case "/rp-admin/design":
+                setRenderPage({
+                    dashboard:false,
+                    pages: false,
+                    media:false,
+                    plugins:false,
+                    pref:false,
+                    design:true
                 })
                 break;
         
             default:
                 break;
         }
-    }, [])
-    
+    }, [url])
 
     return (
-        <div className='grid grid-cols-12'>
+        <div className='grid grid-cols-10 overflow-y-hidden'>
             <SideBar />
-            <section id="rp-Content" className='col-span-10 p-4'>
+            <section id="rp-Content" className='col-span-9 p-4 '>
                 {renderPage.dashboard ? <Dashboard /> : null }
                 {renderPage.pages ? <Pages /> : null }
                 {renderPage.media ? <Media /> : null }
                 {renderPage.plugins ? <Plugins /> : null }
                 {renderPage.pref ? <Preferences /> : null }
+                {renderPage.design ? <Design /> : null }
             </section>
         </div>
     )

@@ -69,7 +69,9 @@ return (
                 <Route path='/rp-admin/pages' element={<RPADMIN />}/>
                 <Route path='/rp-admin/preference' element={<RPADMIN />}/>
                 <Route path='/rp-admin/plugins' element={<RPADMIN />}/>
+                <Route path='/rp-admin/design' element={<RPADMIN />}/>
             </Routes>
+            { actPage[1] !== "rp-admin" && sessionStorage.getItem("editMode") ? <a href={process.env.REACT_APP_BASE_URL+"/rp-admin"} className='absolute bottom-0 right-0 p-1 bg-red-600 hover:bg-red-700  w-32 text-center font-bold '>EDIT</a> : null }
             {/* <Footer /> */}
         </BrowserRouter>
     </>
