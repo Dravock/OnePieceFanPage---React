@@ -13,7 +13,7 @@ import World from './Pages/Public/World.js';
 import AboutUs from './Pages/Public/AboutUs.js';
 import RPADMIN from './backend/pages/RP-ADMIN';
 import HeaderBackend from './backend/components/Header_Backend/rp-HeaderBackend.js';
-import rpMedia from './backend/pages/rp-admin-media'
+
 
 
 function Router() {
@@ -28,6 +28,7 @@ function Router() {
 
     const cookies = new Cookies()
     const token = cookies.get('token')
+    const editMode = localStorage.getItem("editMode")
 
     const actPage = checkURL()
 
@@ -45,7 +46,6 @@ function Router() {
     })() 
 }, [token])
 */}
-
 
 return (
     <>
@@ -71,7 +71,7 @@ return (
                 <Route path='/rp-admin/plugins' element={<RPADMIN />}/>
                 <Route path='/rp-admin/design' element={<RPADMIN />}/>
             </Routes>
-            { actPage[1] !== "rp-admin" && sessionStorage.getItem("editMode") ? <a href={process.env.REACT_APP_BASE_URL+"/rp-admin"} className='absolute bottom-0 right-0 p-1 bg-red-600 hover:bg-red-700  w-32 text-center font-bold '>EDIT</a> : null }
+            { actPage[1] !== "rp-admin" && Boolean(editMode)  === true ? <a href={process.env.REACT_APP_BASE_URL+"/rp-admin"} className='fixed bottom-0 right-0 p-1 bg-red-600 hover:bg-red-700  w-32 text-center font-bold '>EDIT</a> : null }
             {/* <Footer /> */}
         </BrowserRouter>
     </>
