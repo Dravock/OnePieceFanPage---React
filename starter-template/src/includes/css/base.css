@@ -1,9 +1,40 @@
+@font-face {
+    font-family: "ONE PIECE";
+
+    src: url("https://db.onlinewebfonts.com/t/82848488b73a87d72f2436c02b9ab608.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/82848488b73a87d72f2436c02b9ab608.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/82848488b73a87d72f2436c02b9ab608.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/82848488b73a87d72f2436c02b9ab608.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/82848488b73a87d72f2436c02b9ab608.svg#ONE PIECE")format("svg");
+}
+
+.op-font{
+    font-family: "ONE PIECE";
+}
+
+.bg-wood {
+    background-image: url("../img/jpeq/wood-bg.jpg");
+    background-repeat: repeat;
+}
+
+.bg-paper-wood {
+    background-image: url("../img/jpeq/4k-old-paper-texture-close-up-brown-paper-paper-backgrounds.jpg");
+    background-repeat: repeat;
+}
+
+header {
+    font-family: "ONE PIECE";
+    font-size: 36px;
+    @apply text-6xl md:text-xl ;
+}
+
 body{
-    @apply min-h-screen w-full m-0 p-0 ;
+    @apply min-h-screen w-full m-0 p-0 bg-slate-800/70;
 }
 
 .box-debugger{
     @apply border border-red-600;
+
 }
 
 
