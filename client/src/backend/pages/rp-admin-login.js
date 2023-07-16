@@ -14,9 +14,9 @@ function RpAdminLogin() {
     const [inputData,setInputData]=useState()
 
     const submit = async (e) =>{
+        console.log(process.env.REACT_APP_BASE_API_URL + '/login/login.php')
         e.preventDefault()
-        await rp_POST_Hook("/login/login.php",inputData)
-/*         await axios.post(process.env.REACT_APP_BASE_URL + '/login/login.php',inputData)
+        await axios.post(process.env.REACT_APP_BASE_API_URL + '/login/login.php',inputData)
             .then((response)=>{
                 const requestedData = response.data
                 // const options = {
@@ -30,7 +30,7 @@ function RpAdminLogin() {
             })
             .catch((error)=>{
                 alert(Messages.loginFailed.message)
-            }) */
+            }) 
     }
 
     const inputListener = (e) => {

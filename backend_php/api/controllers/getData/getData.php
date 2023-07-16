@@ -1,16 +1,11 @@
 <?php
 require_once("../../base/start.php");
-require_once(API_ROOT . "/controllers/getData/getData.query.php");
 require_once(API_ROOT . "/base/jwt.php");
 
 
 function getAppData() {
     try {
-        $query = new GetAppData();
-        $resultAppData = $query->getAppData();
-        $resultOrder = $query->getOrders();
-        $returnArr = [$resultAppData,$resultOrder];
-        echo json_encode($returnArr);
+        echo json_encode("ja war da");
         http_response_code(200);
         return ;
         

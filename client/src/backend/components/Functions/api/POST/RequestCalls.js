@@ -4,14 +4,12 @@ import Messages from '../../../../../includes/enums/Messages';
 
 
 export const rp_POST_Hook = async ( api_path , inputData ) => {
-    console.log("post hook",api_path , inputData)
+    console.log(process.env.REACT_APP_BASE_API_URL + `${api_path}`)
+
     const cookies = new Cookies()
     const token = cookies.get('token')
-
     
-
-
-    return await axios.post(process.env.REACT_APP_BASE_URL + `${api_path}`,inputData)
+    return await axios.post(process.env.REACT_APP_BASE_API_URL + `${api_path}`,inputData)
                         .then((response)=>{
                             const requestedData = response.data
                             // const options = {
@@ -20,7 +18,7 @@ export const rp_POST_Hook = async ( api_path , inputData ) => {
                             //     path:'/',
                             //     expires: new Date(Date.now() +  1000*60*60*5) 
                             // }
-                            console.log("war hier im POST HOOK")
+                            console.log(response)
                         })
                         .catch((error) => {
                             if(error.response.status === 401){
