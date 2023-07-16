@@ -14,8 +14,8 @@ function Header() {
     const navbarLinks = [
         { title:"Home",url:"/" },
         { title:"Characters",url:"/characters" },
-        { title:"Services",url:"/services" },
-        { title:"Contact Us",url:"/contact-us" },
+        { title:"World",url:"/world" },
+        { title:"About Us",url:"/about-us" },
     ]
 
     const baseURL = process.env.REACT_APP_BASE_URL ;
@@ -51,11 +51,13 @@ return (
         <div className='grid grid-cols-12 gap-4 bg-blue-500/40'>
 
             <div className='col-span-9 md:col-span-4'>
-                <img src={Logo} width={"250px"} height={"80px"} alt="company-logo" className='p-1'/>
+                <a href={process.env.REACT_APP_BASE_URL} className='cursor-pointer'>
+                    <img src={Logo} width={"250px"} height={"80px"} alt="company-logo" className='p-1'/>
+                </a>
             </div>
 
             <div className='md:col-span-2 hidden sm:flex  items-center justify-end '>
-                <h3 className=' text-lg  md:text-8xl op-font text-white'>wOrld</h3>
+                <h3 className=' text-lg  md:text-8xl op-font text-white cursor-default'>wOrld</h3>
             </div>
 
             <div className='col-span-4 md:col-span-5 pb-2 flex items-end justify-end'>
