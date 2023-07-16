@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import luffy from '../../includes/img/png/characters/luffy/luffy.png'
 
 function App() {
+
+  const [test,setTest]= useState()
+  
   return (
     <div className="App ">
       <div className='bg-wood p-4'> 

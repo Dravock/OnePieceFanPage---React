@@ -2,7 +2,7 @@ import React from 'react'
 import ImageUploader from '../components/rp_media/MediaUpload/ImageUploader'
 import MediaPreview from '../components/rp_media/MediaPreview/MediaPreview'
 
-function rpAdminMedia() {
+function RpAdminMedia() {
     return (
         <div>
             <h1 className='text-3xl font-bold underline text-white/70 mb-4'>Medien</h1>
@@ -13,4 +13,4 @@ function rpAdminMedia() {
     )
 }
 
-export default rpAdminMedia
+export default RpAdminMedia

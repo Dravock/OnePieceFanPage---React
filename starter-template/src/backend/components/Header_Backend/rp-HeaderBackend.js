@@ -40,9 +40,12 @@ function HeaderBackend() {
     return (
         <div className='flex w-full bg-slate-700 p-2 select-first'>
             {test_HeaderLinks.map(({title,url},index)=>
-                <a href={url} className='block text-white mx-4' key={index}>{title}</a>
+                <>
+                    <a href={url} className='block text-white mx-4' key={index}>{title}</a>
+                    <span className='text-white'>|</span>
+                </>
             )}
-            <div className='flex'>
+            <div className='ml-4 flex'>
                 <label class="edit-switch">
                     <input type="checkbox" onChange={changeListener} checked={checked}/>
                     <span class="edit-slider edit-round"></span>

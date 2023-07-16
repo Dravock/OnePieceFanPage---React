@@ -1,6 +1,6 @@
 import React from 'react'
 
-function rpAdminPlugins() {
+function RpAdminPlugins() {
   return (
     <div>
         <h1 className='text-3xl font-bold underline text-white/70 mb-4'>Plugins</h1>
@@ -11,4 +11,4 @@ function rpAdminPlugins() {
   )
 }
 
-export default rpAdminPlugins
+export default RpAdminPlugins

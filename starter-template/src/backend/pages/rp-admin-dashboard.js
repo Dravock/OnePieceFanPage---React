@@ -1,6 +1,6 @@
 import React from 'react'
 
-function rpAdminDashboard() {
+function RpAdminDashboard() {
   return (
     <div className=''>
         <h1 className='text-3xl font-bold underline text-white/70 mb-4'>Dashboard</h1>
@@ -11,4 +11,4 @@ function rpAdminDashboard() {
   )
 }
 
-export default rpAdminDashboard
+export default RpAdminDashboard

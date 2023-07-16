@@ -12,6 +12,7 @@ import Characters from './Pages/Public/Characters.js';
 import World from './Pages/Public/World.js';
 import AboutUs from './Pages/Public/AboutUs.js';
 import RPADMIN from './backend/pages/RP-ADMIN';
+import RPLOGIN from './backend/pages/rp-admin-login';
 import HeaderBackend from './backend/components/Header_Backend/rp-HeaderBackend.js';
 
 
@@ -64,6 +65,7 @@ return (
             </div>
             <Routes>
                 {/* Private Pages */}
+                <Route path='/rp-login' element={<RPLOGIN />}/>
                 <Route path='/rp-admin' element={<RPADMIN />}/>
                 <Route path='/rp-admin/media' element={<RPADMIN />}/>
                 <Route path='/rp-admin/pages' element={<RPADMIN />}/>
