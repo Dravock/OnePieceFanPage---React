@@ -14,7 +14,6 @@ function RpAdminLogin() {
     const [inputData,setInputData]=useState()
 
     const submit = async (e) =>{
-        console.log(process.env.REACT_APP_BASE_API_URL + '/login/login.php')
         e.preventDefault()
         await axios.post(process.env.REACT_APP_BASE_API_URL + '/login/login.php',inputData)
             .then((response)=>{
@@ -26,7 +25,7 @@ function RpAdminLogin() {
                 //     expires: new Date(Date.now() +  1000*60*60*5) 
                 // }
 
-                navigate('/dashboard')
+                navigate('/rp-admin/#')
             })
             .catch((error)=>{
                 alert(Messages.loginFailed.message)

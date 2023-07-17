@@ -2,7 +2,7 @@
 import AppS from './Pages/Public/AppS.js'
 
 // IMPORTS FOR WEBSITE DESIGN
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import { Validation } from './includes/functions/Validation';
 import  Header from  './components/Header/Header.js'
@@ -18,10 +18,10 @@ import HeaderBackend from './backend/components/Header_Backend/rp-HeaderBackend.
 
 
 function Router() {
+    
+    const [url ,setURL] =useState( window.location.pathname )
 
     const checkURL =()=>{
-        const url = window.location.pathname
-    
         const newURL = url.split("/")
     
         return newURL
@@ -31,9 +31,12 @@ function Router() {
     const token = cookies.get('token')
     const editMode = localStorage.getItem("editMode")
 
-    const actPage = checkURL()
+    const [actPage ,setActPage] = useState(checkURL())
+
+    
 
 
+    
 
 {/* useEffect(() => {
     (async()=>{
@@ -51,7 +54,7 @@ function Router() {
 return (
     <>
         <BrowserRouter basename='/'>
-            {actPage[1] === "rp-admin" ? <HeaderBackend /> : <Header />  }
+            {actPage[1]  === "rp-admin" ? <HeaderBackend /> : <Header />  }
             <div className='container mx-auto'> 
             {/* REACT ROUTER ROUTES */}
             <Routes>

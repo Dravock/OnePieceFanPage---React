@@ -20,24 +20,46 @@ function MediaPreview() {
         },
         {
             title: "bild",
-            src:""
+            src:namiIMG
         },
         {
             title: "bild",
-            src:""
+            src:robinIMG
         },
+        {
+            title: "bild",
+            src:luffyIMG
+        },
+        {
+            title: "bild",
+            src:robinIMG
+        },
+        {
+            title: "bild",
+            src:namiIMG
+        },
+        {
+            title: "bild",
+            src:robinIMG
+        },
+        {
+            title: "bild",
+            src:luffyIMG
+        },
+        {
+            title: "bild",
+            src:robinIMG
+        },
+
     ]
 
     return (
         <section id="rp-media-Preview">
             <div className=' bg-slate-100 p-4 min-h-[750px] '>
                 <h2 className='font-bold text-2xl mb-4 underline'>Ihre Bilder Vorschau</h2>
-                <div className='grid grid-cols-12 gap-4'>
+                <div className='grid grid-cols-10 gap-4'>
                     {testImageArray.map(({title,src},index)=>
-                        <div className='bg-slate-300 col-span-2 rounded-md  cursor-pointer hover-prev h-60' key={index}>
-                            <div className=''>
-                                <img src={src}  className='object-contain w-24' />
-                            </div>
+                        <div className='bg-slate-300 col-span-2 rounded-md  cursor-pointer hover-prev h-52 bg-contain bg-no-repeat bg-center' key={index} style={{backgroundImage:`url(${src})`}}>
                             <h2 className='p-4 font-bold'>{title}</h2>
                         </div>
                     )}
