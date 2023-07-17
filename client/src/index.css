@@ -7,5 +7,4 @@
 @import "includes/css/base.css"; 
 
 /* CUSTOM RP BACKEND IMPORTS */
-@import "../src/backend/components/inc/css/SideBar.css";
-@import "../src/backend/components/inc/css/rp-Header.css";
+@import "../src/backend/components/inc/css/Importer_This_Style_File.css";

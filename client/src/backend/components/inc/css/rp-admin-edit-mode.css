@@ -1,0 +1,10 @@
+main[id="edit-mode-Single-Page"]  section:hover {
+    border: 1px inset red;
+    cursor: pointer;
+    @apply bg-slate-500;
+}
+
+main[id="edit-mode-Single-Page"]  section {
+    @apply h-40 flex my-6 bg-slate-400 p-4;
+}
+
