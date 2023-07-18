@@ -5,8 +5,12 @@ main[id="edit-mode-Single-Page"]  section:hover {
 }
 
 main[id="edit-mode-Single-Page"]  section {
-    @apply h-40 flex my-6 bg-slate-400 p-4;
+    @apply h-40 flex my-6 bg-slate-400 p-4 overflow-hidden;
 }
+
+/* main[id="edit-mode-Single-Page"]  div[name="edit-mode-tool-box"] {
+    @apply ;
+} */
 
 
 
