@@ -1,4 +1,7 @@
-export const add_edit_toolbox = ()=> {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import  { deleteIcon }  from '@fortawesome/free-solid-svg-icons'
+
+export const add_edit_toolbox = (testfunc_param)=> {
 
     const getSections = document.querySelectorAll(`#edit-mode-Single-Page section`)
     let count = 0 
@@ -22,43 +25,47 @@ export const add_edit_toolbox = ()=> {
             const getToolBox = document.querySelectorAll(`.edit-mode-tool-box`)
             
             getToolBox.forEach(item => {
-                item.classList.add("absolute","w-40", "h-10","bg-slate-200/70","top-1/3","left-1/2" , "z-30","hover:bg-red-500","translate-x-[-50%]","hidden")
+                item.classList.add("absolute","w-40", "h-10","bg-slate-200/70","top-1/3","left-1/2" , "z-30","translate-x-[-50%]","hidden")
             });
         // Hier werden drei Buttons erzeugt
-        add_toolbox_items()
+        add_toolbox_items(testfunc_param)
 }
 
 const add_toolbox_items = ()=> {
     let append_to_toolbox
+    // let append_edit_icon
+
     const get_toolbox = document.querySelectorAll('div[name="edit-mode-tool-box"]')
 
-    // <a-tag> wird erzeugt
+    // hier werden die Delete und Bearbeiten buttons erzeugt
     get_toolbox.forEach(item => {
 
         // Bearbeiten Button
-        const new_button =document.createElement("a")
+        const edit_button = document.createElement("button")
+        edit_button.setAttribute("name", `rp-edit-button`)
+        edit_button.addEventListener("click",()=>clickTester())
 
-        new_button.setAttribute("onClick",`${test()}`)
-        new_button.setAttribute("class","#")
+        // const edit_button_icon = document.createElement("FontAwesomeIcon")
+        append_to_toolbox = item.appendChild(edit_button)
 
-        append_to_toolbox = item.appendChild(new_button)
         // Bearbeiten Löschen
-        const new_button2 =document.createElement("a")
-
-        new_button.setAttribute("onClick",`${test()}`)
-        new_button.setAttribute("class","#")
-
-        append_to_toolbox = item.appendChild(new_button2)
+        const delete_button = document.createElement("button")
+        delete_button.setAttribute("name", `rp-delete-button`)
+        delete_button.addEventListener("click",()=>clickTester())
+        append_to_toolbox = item.appendChild(delete_button)
     });
-
-
-   // append_to_toolbox = get_toolbox.appendChild(new_button)
+    
+    // const get_all_edit_buttons = document.querySelectorAll('button[name="rp-edit-button"]')
+    // get_all_edit_buttons.forEach(element => {
+        // const create_Edit_Button_icon = document.createElement("FontAwesomeIcon")
+        // append_edit_icon = element.appendChild(create_Edit_Button_icon)
+    // });
 
     return ;
 }
 
-const test =()=>{
-    let a
-    a = "hi-test"
-    return a
+
+const clickTester =()=>{
+    console.log("wurde geklickt");
+    return
 }

@@ -12,6 +12,26 @@ main[id="edit-mode-Single-Page"]  section {
     display: flex;
 }
 
+button[name="rp-edit-button"]{
+    @apply w-1/2 bg-white border hover:border-red-500;
+}
+
+button[name="rp-edit-button"]::after{
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    content: "\26A0";
+}
+button[name="rp-delete-button"]::after{
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    content: "\01F3B2";
+}
+
+button[name="rp-delete-button"]{
+    @apply w-1/2 bg-white border hover:border-red-500;
+}
 /* main[id="edit-mode-Single-Page"]  div[name="edit-mode-tool-box"] {
     @apply ;
 } */

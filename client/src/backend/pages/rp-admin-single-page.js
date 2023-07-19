@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Apps from '../../Pages/Public/AppS'
 import World from '../../Pages/Public/World'
-import { add_edit_toolbox , add_atts } from '../components/Functions/CreateElements.js'
+import { add_edit_toolbox  } from '../components/Functions/CreateElements.js'
 
 function RpAdminSinglePage(props) {
     const { SinglePageData, renderPageUndo } = props
@@ -12,6 +12,8 @@ function RpAdminSinglePage(props) {
     var page = url.searchParams.get("page");
     var singleView = url.searchParams.get("single");
 
+    const [status,setStatus]= useState(false)
+
     
     useEffect(() => {
         createEditButton()
@@ -19,10 +21,15 @@ function RpAdminSinglePage(props) {
     
 
     const createEditButton = () => {
-        add_edit_toolbox()
+        add_edit_toolbox(setStatus)
     }
 
+    const test =()=>{
+        console.log("Hi ich bins");
+        return
+    }
 
+    console.log(status);
 
     return (
         <>
