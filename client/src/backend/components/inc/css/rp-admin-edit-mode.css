@@ -8,6 +8,10 @@ main[id="edit-mode-Single-Page"]  section {
     @apply h-40 flex my-6 bg-slate-400 p-4 overflow-hidden;
 }
 
+.sections-editmode:hover div[name="edit-mode-tool-box"]{
+    display: flex;
+}
+
 /* main[id="edit-mode-Single-Page"]  div[name="edit-mode-tool-box"] {
     @apply ;
 } */

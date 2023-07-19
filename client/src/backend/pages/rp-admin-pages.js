@@ -53,7 +53,9 @@ function RpAdminPages() {
   useEffect(() => {
     url = new URL(window.location.href);
     singleView = url.searchParams.get("single");
-    console.log(singleView);
+    if(singleView === "true"){
+      setShowContent({all:false,single:true})
+    }
   }, [])
   
 
