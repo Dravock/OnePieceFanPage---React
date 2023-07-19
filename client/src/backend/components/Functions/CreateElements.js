@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import  { deleteIcon }  from '@fortawesome/free-solid-svg-icons'
 
-export const add_edit_toolbox = (testfunc_param)=> {
+export const add_edit_toolbox = ()=> {
 
     const getSections = document.querySelectorAll(`#edit-mode-Single-Page section`)
     let count = 0 
@@ -28,7 +28,7 @@ export const add_edit_toolbox = (testfunc_param)=> {
                 item.classList.add("absolute","w-40", "h-10","bg-slate-200/70","top-1/3","left-1/2" , "z-30","translate-x-[-50%]","hidden")
             });
         // Hier werden drei Buttons erzeugt
-        add_toolbox_items(testfunc_param)
+        add_toolbox_items()
 }
 
 const add_toolbox_items = ()=> {
@@ -63,7 +63,6 @@ const add_toolbox_items = ()=> {
 
     return ;
 }
-
 
 const clickTester =()=>{
     console.log("wurde geklickt");

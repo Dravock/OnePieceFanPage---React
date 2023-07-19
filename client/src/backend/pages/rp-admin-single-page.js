@@ -21,15 +21,8 @@ function RpAdminSinglePage(props) {
     
 
     const createEditButton = () => {
-        add_edit_toolbox(setStatus)
+        add_edit_toolbox()
     }
-
-    const test =()=>{
-        console.log("Hi ich bins");
-        return
-    }
-
-    console.log(status);
 
     return (
         <>
