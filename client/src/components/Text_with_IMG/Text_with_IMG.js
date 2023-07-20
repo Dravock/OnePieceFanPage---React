@@ -31,9 +31,9 @@ return (
             <div className={`col-span-6 ${getPosition()} `}>
                 <div className='grid grid-cols-12 '>
                     { headline !== undefined ? <h1 className='col-span-12 font-bold text-2xl underline pt-2 sm:pt-0  ml-5 sm:ml-0'>{headline}</h1> : <span></span>}
-                    <span className='col-span-12   '>
+                    <span className='col-span-12 p-8   '>
                         <p>
-                            {text}fwfwff
+                            {text}
                         </p>
                     </span>
                 </div>
